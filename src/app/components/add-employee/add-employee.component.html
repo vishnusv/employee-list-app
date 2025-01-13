@@ -1,0 +1,14 @@
+<app-header-bar [title]="title"></app-header-bar>
+<div class="add-employee-form">
+    <input class="input-name" [(ngModel)]="name" type="text" placeholder="- Name -" tabindex="1"/>
+    <app-custom-select [options]="roles" [(selectedOption)]="role"  tabindex="2"></app-custom-select>      
+    <div style="display: flex; justify-content: space-between; align-items: center;">      
+      <app-date-picker [(selectedDate)]="startDate"  tabindex="3"></app-date-picker>
+      <img src="/right-arrow.svg" />
+      <app-date-picker [min]="startDate" [(selectedDate)]="endDate" [type]="'ENDDATE'"  tabindex="4"></app-date-picker>
+    </div>    
+</div>
+<div class="action-bar">
+  <button mat-flat-button class="light-button" (click)="cancelEditEmployee()"  tabindex="0">Cancel</button>
+  <button mat-flat-button (click)="saveEmployee()"  tabindex="5">Save</button>
+</div>

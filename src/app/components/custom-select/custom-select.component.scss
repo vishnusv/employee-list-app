@@ -1,0 +1,69 @@
+.custom-select {
+    position: relative;
+  }
+
+  .custom-select select {
+    display: none;
+  }
+
+  .select-selected {
+    background-color: white;
+    background: 11px 9px url(/briefcase.svg) no-repeat;
+    padding-left: 40px;
+  }
+
+  .select-selected:after {
+    position: absolute;
+    content: '';
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #1DA1F2 transparent transparent transparent;
+  }
+
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #1DA1F2 transparent;
+    top: 7px;
+  }
+
+  .select-selected {
+    padding: 10px 16px 10px 40px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;    
+  }
+
+  .select-items {
+    position: fixed;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: solid 1px #cccccc;
+    border-radius: 5px 5px 0px 0px;
+    text-align: center;
+    div {
+        padding: 12px 16px 12px 16px;
+        border-bottom: 1px solid #cccccc;
+        cursor: pointer;
+        user-select: none;
+    }
+    @media (min-width: 1024px) {
+      position: absolute;
+      top: 100%;
+      height: fit-content;
+    }
+  }
+
+  .select-hide {
+    display: none;
+  }
+
+  .select-items div:hover,
+  .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }

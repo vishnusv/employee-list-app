@@ -1,0 +1,52 @@
+.employee-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 0px 8px;    
+    position: relative;
+    overflow: hidden;
+    transform: translateX(0);
+    width: calc(100% + 100px);
+    touch-action: pan-y !important;
+  }
+
+  .employee-info {
+    padding: 8px 8px 12px 8px;
+    width: 100%;
+    background-color: #fff;
+    .employee-name {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: black;
+      margin-bottom: 10px;
+    }
+    
+    div, p {
+      display: flex;
+      justify-content: space-between;
+      color: gray;
+    }
+  
+    
+  
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+  
+    p {
+      margin: 4px 0;
+      font-size: 0.9rem;
+    }
+  }
+
+  .delete-button {
+    background: red;
+    color: white;
+    border: none;    
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+  }

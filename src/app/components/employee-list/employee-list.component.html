@@ -1,0 +1,26 @@
+<app-header-bar [title]="'Employee List'"></app-header-bar>
+@if(employees().length > 0) {
+    <div class="employee-list">
+        <div class="category">Current employees</div>
+        @for(employee of currentEmployees(); track employee) {
+            <app-employee-card [employee]="employee" style="width: 100%;" (deleted)="removeEmployee($event)"></app-employee-card>
+        }
+        <div class="category">Previous employees</div>
+        @for(employee of previousEmployees(); track employee) {
+            <app-employee-card [employee]="employee" style="width: 100%;" (deleted)="removeEmployee($event)"></app-employee-card>
+        }
+    </div>
+} @else {
+    <div class="no-employees-container">
+       <img src="/no-employees.png" alt="No Employees" class="no-employees-image" />
+       <p>No employees records found</p>
+    </div>
+}
+<div class="footer">
+    @if(employees().length>0) {
+        <span>Swipe left to delete</span>
+    } @else {
+        <span>&nbsp;</span>
+    }
+    <button class="add-button" (click)="navigateToAddEmployee()">+</button>
+</div>

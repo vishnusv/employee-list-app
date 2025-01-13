@@ -1,0 +1,21 @@
+@if(type() == "STARTDATE") {
+    <div class="date-picker-buttons">
+        <button mat-flat-button class="light-button" (click)="selectToday()">Today</button>
+        <button mat-flat-button (click)="selectNextMonday()">Next Monday</button>
+        <button mat-flat-button class="light-button" (click)="selectNextTuesday()">Next Tuesday</button>
+        <button mat-flat-button class="light-button" (click)="selectAfterOneWeek()">After 1 Week</button>
+    </div>
+} @else {
+    <div class="date-picker-buttons">        
+        <button mat-flat-button (click)="clearSelection()">No date</button>
+        <button mat-flat-button class="light-button" (click)="selectToday()">Today</button>
+    </div>
+}
+<div mat-dialog-content>
+    <mat-calendar class="custom" [headerComponent]="calendarHeader" [selected]="dateControl.value" [minDate]="min()" (selectedChange)="dateControl.setValue($event)"></mat-calendar>
+</div>
+<div class="footer" mat-dialog-actions align="end">
+    <div>{{(dateControl.value | date: 'MMM dd, yyyy') || 'No date'}}</div>
+    <button mat-flat-button class="light-button" style="margin-right: 1rem;" (click)="cancel()">Cancel</button>
+    <button mat-flat-button (click)="save()">Save</button>
+</div>

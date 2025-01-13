@@ -1,0 +1,35 @@
+.date-picker-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0px 10px 0px;;
+  gap: 10px;
+  button {
+      width: 45%;
+      height:35px;
+  }
+  .light-button {
+    background-color: #e5f0f7;
+    color: #5ba2ce;
+  }
+}
+.custom {
+  border-bottom: solid 1px #cccccc;
+}
+.footer {
+  margin: 15px 10px;
+  display: flex;
+  align-self: end;
+  width: 100%;
+  .light-button {
+    background-color: #e5f0f7;
+    color: #3078a5;
+  }
+  div {
+    flex: auto;
+    text-align: left;
+    place-self: center;
+    padding-left: 4rem;
+    background: url(/calendar.svg) no-repeat 35px -1px;
+  }
+}

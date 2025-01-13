@@ -1,0 +1,21 @@
+<div class="employee-card" (swipeLeft)="onSwiteLeft($event)" (swipeRight)="onSwiteRight($event)" [@swipeAnimation]="swipeState">
+    <div class="employee-info" (click)="navigateToEditEmployee(employee.id)">
+        <p class="employee-name">{{ employee.name }}</p>
+        <p>Role: {{ employee.role }}</p>
+        @if(employee.endDate) {
+            <div>
+                <p>{{ employee.startDate | date}} - {{ employee.endDate  | date}}</p>
+            </div>
+        } @else {
+            <div>
+                <p>From: {{ employee.startDate  | date}}</p>                   
+            </div>
+        }
+    </div>
+    <div>
+        <button mat-fab class="delete-button" (click)="deleteEmployee(employee.id)">
+            <!--<mat-icon>delete</mat-icon>-->
+            <img src="/bin.svg"/>
+        </button>      
+    </div>      
+</div>
